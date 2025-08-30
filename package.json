@@ -15,7 +15,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "build": "SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false react-scripts build",
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "start": "react-scripts start",
     "eject": "react-scripts eject",
@@ -33,12 +33,18 @@
   "overrides": {
     "react-scripts": {
       "webpack": "5.88.2",
-      "fork-ts-checker-webpack-plugin": "6.5.3"
+      "fork-ts-checker-webpack-plugin": "6.5.3",
+      "webpack-dev-server": "4.15.1"
     },
     "ajv": "8.12.0",
     "ajv-keywords": "5.1.0",
     "schema-utils": "4.2.0",
-    "fork-ts-checker-webpack-plugin": "6.5.3"
+    "fork-ts-checker-webpack-plugin": "6.5.3",
+    "webpack-dev-server": "4.15.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.11",
+    "css-loader": "6.8.1",
+    "html-webpack-plugin": "5.5.3",
+    "mini-css-extract-plugin": "2.7.6"
   },
   "devDependencies": {
     "@types/react": "^19.1.12",
