@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Monanimal Crush - Match-3 Puzzle Game on Monad",
   "author": "developer@monad-games.com",
-  "homepage": ".",
+  "homepage": "/",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@privy-io/cross-app-connect": "^0.2.3",
