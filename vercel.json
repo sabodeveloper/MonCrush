@@ -1,9 +1,8 @@
 {
-  "buildCommand": "CI=false SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false npm run build",
+  "buildCommand": "CI=false SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true DISABLE_ESLINT_PLUGIN=true npm run build",
   "outputDirectory": "./build",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "create-react-app",
-  "functions": {},
   "headers": [
     {
       "source": "/static/(.*)",
@@ -20,33 +19,15 @@
       ]
     },
     {
-      "source": "/manifest.json",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" },
-        { "key": "Content-Type", "value": "application/manifest+json" }
-      ]
-    },
-    {
-      "source": "/(.*\\.(png|jpg|jpeg|gif|svg|ico))",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/monanimalcrush", "destination": "/index.html" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
