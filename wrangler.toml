@@ -1,0 +1,19 @@
+name = "moncrush"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "CI=false SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false npm run build"
+output_dir = "build"
+
+[build.environment]
+NODE_VERSION = "18"
+
+[site]
+bucket = "./build"
+entry-point = "."
+
+[env.production]
+name = "moncrush-production"
+
+[env.staging]
+name = "moncrush-staging"
