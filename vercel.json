@@ -1,6 +1,6 @@
 {
   "buildCommand": "CI=false SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true DISABLE_ESLINT_PLUGIN=true npm run build",
-  "outputDirectory": "build",
+  "outputDirectory": "./build",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "create-react-app",
   "headers": [
@@ -75,18 +75,15 @@
       ]
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/index.html"
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "continue": true
     },
     {
-      "source": "/monanimalcrush",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
