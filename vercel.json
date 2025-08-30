@@ -23,7 +23,7 @@
       ]
     },
     {
-      "source": "/static/js/**",
+      "source": "/static/js/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "source": "/static/css/**",
+      "source": "/static/css/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "source": "/static/media/**",
+      "source": "/static/media/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
